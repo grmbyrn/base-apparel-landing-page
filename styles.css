@@ -13,23 +13,26 @@
 }
 
 body{
-    background: url('./images/bg-pattern-desktop.svg'),
-        linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    background-repeat: no-repeat;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1rem;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(150deg, #FFFFFF 0%, #FFF4F4 84.51%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container{
     display: grid;
     grid-template-areas:
-        'header . image'
-        'content content image'
-        'content content image';
+        'header header . image'
+        'content content content image'
+        'content content content image';
     grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat((3, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
 }
 
 .header{
@@ -55,7 +58,6 @@ body{
 
 .text-section{
     padding: 0 2rem 0 2rem;
-    margin-bottom: 5.75rem;
     grid-area: content;
     margin-left: auto;
     margin-right: auto;
@@ -67,6 +69,7 @@ body{
     line-height: 64px;
     letter-spacing: 10.82px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .text-heading span{
@@ -101,7 +104,6 @@ body{
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border: 0;
     border-radius: 2rem;
-    /* box-shadow: 0 5px 20px 3px hsl(0, 80%, 86%); */
     position: absolute;
     height: 100%;
     width: 5rem;
@@ -144,7 +146,7 @@ button:focus{
     display: none;
 }
 
-@media (max-width: 375px){
+@media (max-width: 1200px){
     body{
         text-align: center;
     }
@@ -152,7 +154,7 @@ button:focus{
     .container{
         display: flex;
         flex-direction: column;
-        margin-bottom: 92px;
+        margin-bottom: 5.75rem;
         background: linear-gradient(150deg, #FFFFFF 0%, #FFF4F4 84.51%);
         background-repeat: no-repeat;
         background-size: auto;
@@ -189,30 +191,28 @@ button:focus{
     }
 
     .form{
-        margin-bottom: 92px;
+        margin-bottom: 5.75rem;
     }
 }
 
-@media (min-width: 800px){
+@media (min-width: 1200px){
+    body{
+        background: url('./images/bg-pattern-desktop.svg'),
+        linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    }
+
+    .container{
+        max-width: 1500px;
+    }
+
     .text-section{
-        margin-left: 125px;
-        margin-right: 180px;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        max-width: 650px;
     }
 
     .logo{
-        margin-top: 55px;
-        margin-left: 125px;
-    }
-}
-
-@media (min-width: 1000px){
-    .text-section{
-        margin-left: 145px;
-        margin-right: 200px;
-    }
-
-    .logo{
-        margin-top: 75px;
-        margin-left: 145px;
+        margin-top: 2rem;
+        margin-left: 3rem;
     }
 }
